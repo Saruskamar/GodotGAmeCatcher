@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjeu4focftnhx"]
+
+[ext_resource type="Script" uid="uid://chqj5wfhg1hn8" path="res://bad_item.gd" id="1_snsbj"]
+[ext_resource type="Texture2D" uid="uid://cobylnux3h3gx" path="res://Daco_1865562.png" id="1_uqqqp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uqqqp"]
+radius = 29.0
+height = 86.0
+
+[node name="BadItem" type="Area2D"]
+script = ExtResource("1_snsbj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.162642, 0.155423)
+texture = ExtResource("1_uqqqp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_uqqqp")

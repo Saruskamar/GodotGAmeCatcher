@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bf74vgiy5tofb"]
+
+[ext_resource type="Texture2D" uid="uid://8iuwtme3lny3" path="res://Daco_84244.png" id="1_fdf7i"]
+[ext_resource type="Script" uid="uid://2exvgduw32kt" path="res://good_item.gd" id="1_rnbsl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rnbsl"]
+radius = 22.0227
+
+[node name="GoodItem" type="Area2D"]
+script = ExtResource("1_rnbsl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(0.0576369, 0.0613497)
+texture = ExtResource("1_fdf7i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_rnbsl")

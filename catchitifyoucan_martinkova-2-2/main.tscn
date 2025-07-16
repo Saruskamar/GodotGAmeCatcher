@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://bgy1tadj2of7d"]
+
+[ext_resource type="PackedScene" uid="uid://7m0lq1eby8tt" path="res://player.tscn" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://hwndpn6ysrxg" path="res://main.gd" id="1_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://dc6fvq7wxfcet" path="res://Sni╬ôo╠Ça╠üuΓòáe╠émek obrazovky 2025-07-12 v╬ôo╠ê┬╝aΓòáu╠ê18.45.27.png" id="2_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://dukmm6b5c6qtk" path="res://ui.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bjeu4focftnhx" path="res://bad_item.tscn" id="5_7mycd"]
+[ext_resource type="PackedScene" uid="uid://bf74vgiy5tofb" path="res://good_item.tscn" id="6_272bh"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_1bvp3")
+good_item_scene = ExtResource("6_272bh")
+bad_item_scene = ExtResource("5_7mycd")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(578, 327)
+scale = Vector2(0.95297, 0.724176)
+texture = ExtResource("2_1bvp3")
+
+[node name="SpawnTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="SpeedUpTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="Player" parent="." instance=ExtResource("1_0xm2m")]
+position = Vector2(585, 490)
+
+[node name="UI" parent="." instance=ExtResource("2_h2yge")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 326)
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 20.0
+offset_bottom = 20.0
+text = "Score: 0"
+
+[node name="LivesLabel" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 50.0
+offset_right = 20.0
+offset_bottom = 50.0
+text = "Lives: 3"
+
+[node name="Restart" type="Button" parent="."]
+offset_left = 650.0
+offset_top = 20.0
+offset_right = 650.0
+offset_bottom = 20.0
+text = "Restart"
+
+[node name="GameOver" type="CanvasLayer" parent="."]
+visible = false
